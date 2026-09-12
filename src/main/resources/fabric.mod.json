@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "skytest",
+  "version": "${version}",
+  "name": "SkyTest",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/skytest/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "nano.skytest.client.SkytestDataGenerator"
+    ],
+    "client": [
+      "nano.skytest.client.SkytestClient"
+    ],
+    "main": [
+      "nano.skytest.Skytest"
+    ]
+  },
+  "mixins": [
+    "skytest.mixins.json",
+    {
+      "config": "skytest.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "*"
+  }
+}
